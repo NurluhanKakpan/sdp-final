@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/SoftwareDesignPatternsFinal/Command/CancelCommand.cs" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/SoftwareDesignPatternsFinal/Command/OrderCommand.cs" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/SoftwareDesignPatternsFinal/Factory/ConsumerFactory/ConsumerFactory.cs" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/SoftwareDesignPatternsFinal/Factory/SupplierFactory/SupplierFactory.cs" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/SoftwareDesignPatternsFinal/Service/UserService.cs" dialect="GenericSQL" />
+    <file url="PROJECT" dialect="PostgreSQL" />
+  </component>
+</project>
