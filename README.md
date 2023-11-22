@@ -50,7 +50,7 @@
     Push to the branch (git push origin feature/AmazingFeature)
     Open a pull request
     License
-    [Your App Name] is licensed under the [License Name] License. See the LICENSE file for details.
+    Delivery APP is licensed under the JetBrains License. See the LICENSE file for details.
     
     Contact
-    For any inquiries or support, please contact [Your Email Address].
+    For any inquiries or support, please contact nurlukhankakpan@gmail.com.
