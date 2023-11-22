@@ -18,7 +18,7 @@ public class Auth
         _consumerFactory = consumerFactory;
     }
 
-    public User Register()
+    public User? Register()
     {
         Console.WriteLine("Input your FirstName");
         var firstName = Console.ReadLine();
@@ -46,7 +46,7 @@ public class Auth
         return user;
     }
 
-    public User Login()
+    public User? Login()
     {
         Console.WriteLine("Input your FirstName");
         var firstName = Console.ReadLine();
@@ -55,6 +55,9 @@ public class Auth
         Console.WriteLine("Input Your Password");
         var password = Console.ReadLine();
         var userService = new UserService();
-        return UserService.GetUser(firstName, lastName, password);
+        var user = UserService.GetUser(firstName, lastName, password);
+        if (user == null)
+            throw new Exception("User not found");
+        return user;
     }
 }

@@ -1,18 +1,19 @@
 using Npgsql;
 using SoftwareDesignPatternsFinal.Database;
+using SoftwareDesignPatternsFinal.Enums;
 using SoftwareDesignPatternsFinal.Models;
 
 namespace SoftwareDesignPatternsFinal.Factory.SupplierFactory;
 
 public class SupplierFactory : ISupplierFactory
 {
-    public Supplier Create(string firstName, string lastName, string password)
+    public Supplier? Create(string firstName, string lastName, string password)
     {
         var existSupplier = HaveUserAlreadyInDb(firstName, lastName);
         if (existSupplier)
             throw new Exception("Supplier already exist in db");
         InsertSupplier(firstName,lastName,password);
-        return new Supplier(firstName, lastName, password);
+        return new Supplier(firstName, lastName, UserType.Supplier);
     }
 
     /// <summary>

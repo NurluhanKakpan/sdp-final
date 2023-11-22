@@ -1,18 +1,19 @@
 using Npgsql;
 using SoftwareDesignPatternsFinal.Database;
+using SoftwareDesignPatternsFinal.Enums;
 using SoftwareDesignPatternsFinal.Models;
 
 namespace SoftwareDesignPatternsFinal.Factory.ConsumerFactory;
 
 public class ConsumerFactory : IConsumerFactory
 {
-    public Consumer Create(string firstName, string lastName, string password)
+    public Consumer? Create(string firstName, string lastName, string password)
     {
         var existConsumer = HaveUserAlreadyInDb(firstName, lastName);
         if (existConsumer)
             throw new Exception("Supplier already exist in db");
         InsertConsumer(firstName,lastName,password);
-        return new Consumer(firstName, lastName, password);
+        return new Consumer(firstName, lastName,UserType.Consumer);
     }
     
      private static bool HaveUserAlreadyInDb(string firstName, string lastName)

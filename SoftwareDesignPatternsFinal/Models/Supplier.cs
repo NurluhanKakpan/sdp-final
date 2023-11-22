@@ -19,6 +19,11 @@ public class Supplier : User
     {
         
     }
+
+    public Supplier(string firstName, string lastName, UserType userType) : base(firstName, lastName, UserType.Supplier)
+    {
+        
+    }
     public UserType GetUserType()
     {
         return UserType;

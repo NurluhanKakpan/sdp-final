@@ -13,7 +13,7 @@ public class OrderCommand : ICommandRepository
         _products = products;
     }
 
-    public void ExecuteCommand(User user)
+    public void ExecuteCommand(User? user)
     {
         Console.WriteLine("Write your address to send order");
         var address = Console.ReadLine();

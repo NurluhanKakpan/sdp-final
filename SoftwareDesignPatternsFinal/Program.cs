@@ -14,7 +14,7 @@ class Program
       Console.WriteLine("HELLO USER");
       Console.WriteLine("WELCOME TO FOOD DELIVERY APP");
       var user = Auth();
-      var userType = user.GetUserType();
+      var userType = user?.GetUserType();
       if (userType == UserType.Consumer)
       { 
         DoOrder(user);
@@ -24,11 +24,11 @@ class Program
                           2)Exit
                           """);
         var action = Console.ReadLine();
-        if(action == "1")
+        if(action == "2")
             Environment.Exit(0);
         else
         {
-            Console.WriteLine($"Order canceled by {user.FullName}.");
+            CancelOrder(user);
         }
       }
       else
@@ -42,7 +42,7 @@ class Program
       }
     }
 
-    private static User Auth()
+    private static User? Auth()
     {
         Console.WriteLine("""
                           1) Register 
@@ -69,20 +69,19 @@ class Program
         return new User();
     }
 
-    private static void DoOrder(User user)
+    private static void DoOrder(User? user)
     {
-        Console.WriteLine("Hello ");
         var chooseProducts = ChooseProducts();
         ConfirmOrder(chooseProducts, user);
         
     }
 
-    private static void CancelOrder(Order order, User user)
+    private static void CancelOrder( User user)
     {
-        
+        new CancelCommand().ExecuteCommand(user);
     }   
     
-    private static Order? GetOrder(User user)
+    private static Order? GetOrder(User? user)
     {
         var id = 0;
         var fullName = "";
@@ -118,7 +117,7 @@ class Program
         for (var i = 0; i < productsToDelivery.Length; i++)
         {
             Console.WriteLine($"""
-                               {i + 1}) Name {productsToDelivery[i].Name}
+                               {i}) Name {productsToDelivery[i].Name}
                                Price {productsToDelivery[i].Price}
                                """);
         }
@@ -126,7 +125,7 @@ class Program
         return chooseProducts;
     }
 
-    private static void ConfirmOrder(IDictionary<int, int> products, User user)
+    private static void ConfirmOrder(IDictionary<int, int> products, User? user)
     {
         Console.WriteLine("""
 

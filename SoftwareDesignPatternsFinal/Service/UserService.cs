@@ -7,7 +7,7 @@ namespace SoftwareDesignPatternsFinal.Service;
 
 public class UserService
 {
-    public static User GetUser(string firstName, string lastName, string password)
+    public static User? GetUser(string firstName, string lastName, string password)
     {
         using (var connection = ApplicationDbContext.GetConnection.NpgsqlConnectionFactory)
         {
@@ -35,6 +35,6 @@ public class UserService
                 }
             }
         }
-        return new User();
+        return null;
     }
 }

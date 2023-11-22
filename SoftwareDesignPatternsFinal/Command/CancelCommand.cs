@@ -6,7 +6,7 @@ namespace SoftwareDesignPatternsFinal.Command;
 
 public class CancelCommand : ICommandRepository
 {
-    public void ExecuteCommand(User user)
+    public void ExecuteCommand(User? user)
     {
         using (var connection = ApplicationDbContext.GetConnection.NpgsqlConnectionFactory)
         {

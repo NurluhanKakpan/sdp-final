@@ -4,5 +4,5 @@ namespace SoftwareDesignPatternsFinal.Factory.SupplierFactory;
 
 public interface ISupplierFactory
 {
-    Supplier Create(string firstName, string lastName, string password);
+    Supplier? Create(string firstName, string lastName, string password);
 }

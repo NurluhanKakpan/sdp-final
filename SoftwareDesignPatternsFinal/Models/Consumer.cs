@@ -13,4 +13,9 @@ public class Consumer : User
     public Consumer(string firstName, string lastName, string password) : base(firstName, lastName, password)
     {
     }
+
+    public Consumer(string firstName, string lastName,UserType userType) : base(firstName, lastName, UserType.Consumer)
+    {
+        
+    }
 }
